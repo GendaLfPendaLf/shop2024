@@ -1,0 +1,338 @@
+{
+  "products": [
+    {
+      "brand": "Nike",
+      "type": "Boots",
+      "price": 5.00,
+      "count": 5,
+      "description": "Ботинки найки беговые"
+    },
+    {
+      "brand": "Nike",
+      "type": "Boots",
+      "price": 7.00,
+      "count": 6,
+      "description": "Ботинки найки зимние"
+    },
+    {
+      "brand": "Adidas",
+      "type": "Boots",
+      "price": 5.00,
+      "count": 5,
+      "description": "Ботинки адики для похода в клуб"
+    },
+    {
+      "brand": "Adidas",
+      "type": "Boots",
+      "price": 8.00,
+      "count": 4,
+      "description": "Ботинки адики для твоей малышки"
+    },
+    {
+      "brand": "Puma",
+      "type": "T-shirt",
+      "price": 1.30,
+      "count": 5,
+      "description": "Футболка пума с твоей фоткой"
+    },
+    {
+      "brand": "Adidas",
+      "type": "Boots",
+      "price": 5.00,
+      "count": 5,
+      "description": "Ботинки адики для похода в клуб"
+    },
+    {
+      "brand": "Reebok",
+      "type": "Sneakers",
+      "price": 3.00,
+      "count": 10,
+      "description": "Кроссовки Reebok для утренних пробежек"
+    },
+    {
+      "brand": "Under Armour",
+      "type": "Jacket",
+      "price": 20.00,
+      "count": 7,
+      "description": "Куртка Under Armour для зимних прогулок"
+    },
+    {
+      "brand": "New Balance",
+      "type": "Sneakers",
+      "price": 4.00,
+      "count": 8,
+      "description": "Кроссовки New Balance для долгих прогулок"
+    },
+    {
+      "brand": "Asics",
+      "type": "T-Shirt",
+      "price": 1.50,
+      "count": 9,
+      "description": "Футболка Asics для тренировок в зале"
+    },
+    {
+      "brand": "Converse",
+      "type": "Sneakers",
+      "price": 3.50,
+      "count": 15,
+      "description": "Классические кеды Converse"
+    },
+    {
+      "brand": "Vans",
+      "type": "Sneakers",
+      "price": 4.00,
+      "count": 20,
+      "description": "Оригинальные кеды Vans"
+    },
+    {
+      "brand": "Fila",
+      "type": "Shorts",
+      "price": 2.00,
+      "count": 18,
+      "description": "Спортивные шорты Fila для тренировок"
+    },
+    {
+      "brand": "Skechers",
+      "type": "Sneakers",
+      "price": 3.50,
+      "count": 12,
+      "description": "Ультралегкие кроссовки Skechers"
+    },
+    {
+      "brand": "Salomon",
+      "type": "Jacket",
+      "price": 15.00,
+      "count": 8,
+      "description": "Куртка Salomon для активного отдыха"
+    },
+    {
+      "brand": "Columbia",
+      "type": "Jacket",
+      "price": 18.00,
+      "count": 7,
+      "description": "Ветрозащитная куртка Columbia"
+    },
+    {
+      "brand": "Merrell",
+      "type": "Boots",
+      "price": 6.00,
+      "count": 6,
+      "description": "Ботинки Merrell для походов"
+    },
+    {
+      "brand": "Timberland",
+      "type": "Boots",
+      "price": 7.00,
+      "count": 5,
+      "description": "Прочные ботинки Timberland"
+    },
+    {
+      "brand": "Nike",
+      "type": "Sneakers",
+      "price": 50.00,
+      "count": 10,
+      "description": "High-performance Nike sneakers for running"
+    },
+    {
+      "brand": "Adidas",
+      "type": "Jacket",
+      "price": 60.00,
+      "count": 7,
+      "description": "Adidas waterproof jacket for outdoor activities"
+    },
+    {
+      "brand": "Puma",
+      "type": "T-Shirt",
+      "price": 25.00,
+      "count": 8,
+      "description": "Puma graphic print t-shirt for casual wear"
+    },
+    {
+      "brand": "Reebok",
+      "type": "Shorts",
+      "price": 30.00,
+      "count": 15,
+      "description": "Reebok lightweight shorts for gym workouts"
+    },
+    {
+      "brand": "Under Armour",
+      "type": "Leggings",
+      "price": 40.00,
+      "count": 20,
+      "description": "Under Armour compression leggings for sports"
+    },
+    {
+      "brand": "New Balance",
+      "type": "Hoodie",
+      "price": 45.00,
+      "count": 18,
+      "description": "New Balance cozy hoodie for leisure wear"
+    },
+    {
+      "brand": "Asics",
+      "type": "Sports Bra",
+      "price": 20.00,
+      "count": 25,
+      "description": "Asics supportive sports bra for high-impact activities"
+    },
+    {
+      "brand": "Converse",
+      "type": "Backpack",
+      "price": 55.00,
+      "count": 22,
+      "description": "Converse stylish backpack for daily use"
+    },
+    {
+      "brand": "Vans",
+      "type": "Socks",
+      "price": 10.00,
+      "count": 30,
+      "description": "Vans comfortable socks for all-day wear"
+    },
+    {
+      "brand": "Fila",
+      "type": "Tank Top",
+      "price": 18.00,
+      "count": 25,
+      "description": "Fila breathable tank top for workouts"
+    },
+    {
+      "brand": "Skechers",
+      "type": "Sandals",
+      "price": 35.00,
+      "count": 12,
+      "description": "Skechers cushioned sandals for beach walks"
+    },
+    {
+      "brand": "Salomon",
+      "type": "Hiking Shoes",
+      "price": 80.00,
+      "count": 15,
+      "description": "Salomon durable hiking shoes for outdoor adventures"
+    },
+    {
+      "brand": "Columbia",
+      "type": "Rain Jacket",
+      "price": 70.00,
+      "count": 10,
+      "description": "Columbia waterproof rain jacket for unpredictable weather"
+    },
+    {
+      "brand": "Merrell",
+      "type": "Trail Running Shoes",
+      "price": 90.00,
+      "count": 20,
+      "description": "Merrell grippy trail running shoes for off-road runs"
+    },
+    {
+      "brand": "Timberland",
+      "type": "Casual Boots",
+      "price": 75.00,
+      "count": 17,
+      "description": "Timberland stylish casual boots for urban walks"
+    },
+    {
+      "brand": "Nike",
+      "type": "Hoodie",
+      "price": 55.00,
+      "count": 18,
+      "description": "Nike warm hoodie for cold weather workouts"
+    },
+    {
+      "brand": "Adidas",
+      "type": "Sweatpants",
+      "price": 40.00,
+      "count": 15,
+      "description": "Adidas comfortable sweatpants for lounging"
+    },
+    {
+      "brand": "Puma",
+      "type": "Sports Bra",
+      "price": 25.00,
+      "count": 20,
+      "description": "Puma stylish sports bra for yoga sessions"
+    },
+    {
+      "brand": "Reebok",
+      "type": "Tank Top",
+      "price": 20.00,
+      "count": 25,
+      "description": "Reebok moisture-wicking tank top for intense workouts"
+    },
+    {
+      "brand": "Under Armour",
+      "type": "Sneakers",
+      "price": 90.00
+    },
+    {
+      "brand": "Reebok",
+      "type": "Шорты",
+      "price": 35.00,
+      "count": 10,
+      "description": "Удобные шорты Reebok для спортивных занятий"
+    },
+    {
+      "brand": "Under Armour",
+      "type": "Футболка",
+      "price": 25.00,
+      "count": 12,
+      "description": "Футболка Under Armour с технологией влагоотвода"
+    },
+    {
+      "brand": "New Balance",
+      "type": "Брюки",
+      "price": 40.00,
+      "count": 8,
+      "description": "Удобные брюки New Balance для повседневной носки"
+    },
+    {
+      "brand": "Asics",
+      "type": "Толстовка",
+      "price": 50.00,
+      "count": 15,
+      "description": "Толстовка Asics для прогулок на свежем воздухе"
+    },
+    {
+      "brand": "Converse",
+      "type": "Рюкзак",
+      "price": 60.00,
+      "count": 7,
+      "description": "Стильный рюкзак Converse для повседневной носки"
+    },
+    {
+      "brand": "Vans",
+      "type": "Носки",
+      "price": 10.00,
+      "count": 20,
+      "description": "Удобные носки Vans для активного образа жизни"
+    },
+    {
+      "brand": "Fila",
+      "type": "Толстовка",
+      "price": 45.00,
+      "count": 18,
+      "description": "Толстовка Fila для спортивных тренировок"
+    },
+    {
+      "brand": "Skechers",
+      "type": "Сандалии",
+      "price": 30.00,
+      "count": 25,
+      "description": "Сандалии Skechers для пляжных прогулок"
+    },
+    {
+      "brand": "Salomon",
+      "type": "Ботинки для хайкинга",
+      "price": 80.00,
+      "count": 12,
+      "description": "Прочные ботинки Salomon для походов по горам"
+    },
+    {
+      "brand": "Columbia",
+      "type": "Дождевик",
+      "price": 70.00,
+      "count": 15,
+      "description": "Дождевик Columbia для защиты от непогоды"
+    }
+  ]
+}
