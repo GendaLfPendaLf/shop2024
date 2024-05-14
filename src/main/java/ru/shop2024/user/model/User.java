@@ -1,25 +1,30 @@
 package ru.shop2024.user.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+import ru.shop2024.vo.Order;
 
 import java.util.List;
-import java.util.UUID;
-
 
 @Entity
 @Table(name = "user")
 @Data
 public class User {
     @Id
-    private UUID userId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String name;
     private String surname;
     private String sex;
     private String address;
     private Long basketId;
-    private List<Long> orderIds;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Order> orders;
+
+    // Конструкторы, геттеры и сеттеры
 }
+
+

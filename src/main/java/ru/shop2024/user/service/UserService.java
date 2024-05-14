@@ -1,10 +1,8 @@
 package ru.shop2024.user.service;
 
 import org.springframework.stereotype.Service;
-import ru.shop2024.user.repository.UserRepository;
 import ru.shop2024.user.model.User;
-
-import java.util.UUID;
+import ru.shop2024.user.repository.UserRepository;
 
 @Service
 public class UserService {
@@ -15,10 +13,8 @@ public class UserService {
     }
 
     public User createUser(User user) {
-        // Логика создания пользователя
-        user.setUserId(UUID.randomUUID());
         return userRepository.save(user);
     }
 
-    // Дополнительные методы сервиса, если необходимо
+    // Другие методы
 }
