@@ -1,29 +1,21 @@
-package ru.shop2024.product;
+package ru.shop2024.basket;
 
 import ru.shop2024.controller.Product;
 
 import java.util.UUID;
 
-//В этом классе:
-//id - уникальный идентификатор элемента заказа/корзины (можно использовать UUID или Long).
-//product - ссылка на объект Product, представляющий продукт в заказе/корзине.
-//quantity - количество единиц данного продукта в заказе/корзине.
-public class OrderItem {
+public class BasketItem {
     private UUID id;
     private Product product;
     private int quantity;
 
-    // Конструкторы
-
-    public OrderItem() {
+    public BasketItem() {
     }
 
-    public OrderItem(Product product, int quantity) {
+    public BasketItem(Product product, int quantity) {
         this.product = product;
         this.quantity = quantity;
     }
-
-    // Геттеры и сеттеры
 
     public UUID getId() {
         return id;
@@ -49,3 +41,4 @@ public class OrderItem {
         this.quantity = quantity;
     }
 }
+
