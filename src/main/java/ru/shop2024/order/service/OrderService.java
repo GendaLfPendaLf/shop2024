@@ -1,6 +1,6 @@
-package ru.shop2024.service;
+package ru.shop2024.order.service;
 
-import ru.shop2024.controller.Product;
+import ru.shop2024.product.Product;
 import ru.shop2024.order.Order;
 import ru.shop2024.order.OrderItem;
 

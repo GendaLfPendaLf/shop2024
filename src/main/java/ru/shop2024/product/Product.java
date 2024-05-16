@@ -1,4 +1,4 @@
-package ru.shop2024.controller;
+package ru.shop2024.product;
 
 import lombok.Data;
 

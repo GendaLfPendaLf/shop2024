@@ -4,7 +4,8 @@ import org.springframework.stereotype.Service;
 import ru.shop2024.Interface.BasketRepository;
 import ru.shop2024.basket.Basket;
 import ru.shop2024.basket.BasketItem;
-import ru.shop2024.controller.Product;
+import ru.shop2024.product.Product;
+import ru.shop2024.product.service.ProductService;
 
 import java.util.UUID;
 
@@ -12,9 +13,11 @@ import java.util.UUID;
 public class BasketService {
     // Логика для работы с корзиной, например, добавление, удаление продуктов и т.д.
     private final BasketRepository basketRepository;
+    private final ProductService productService;
 
-    public BasketService(BasketRepository basketRepository) {
+    public BasketService(BasketRepository basketRepository, ProductService productService) {
         this.basketRepository = basketRepository;
+        this.productService = productService;
     }
 
     public BasketItem addBasketItem(Basket basket, UUID productId, int quantity) {

@@ -16,6 +16,10 @@ public class Basket {
     @JoinColumn(name = "basket_id")
     private List<BasketItem> items;
 
+    public List<BasketItem> getItems() {
+        return items;
+    }
+
     // Конструкторы, геттеры и сеттеры
 }
 

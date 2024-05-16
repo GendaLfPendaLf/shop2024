@@ -3,7 +3,6 @@ package ru.shop2024.user.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import ru.shop2024.vo.Order;
 
 import java.util.List;
 

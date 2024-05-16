@@ -1,6 +1,6 @@
 package ru.shop2024.order;
 
-import ru.shop2024.controller.Product;
+import ru.shop2024.product.Product;
 
 import java.util.UUID;
 

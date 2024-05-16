@@ -2,22 +2,24 @@ package ru.shop2024.basket.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ru.shop2024.Interface.BasketRepository;
 import ru.shop2024.basket.Basket;
 import ru.shop2024.basket.BasketItem;
-import ru.shop2024.basket.service.BasketService;
 import ru.shop2024.order.OrderItemRequest;
+import ru.shop2024.basket.service.BasketService;
 
 import java.util.UUID;
 
 @RestController
 @RequestMapping("/baskets")
 public class BasketController {
+    private final BasketRepository basketRepository;
     private final BasketService basketService;
 
-    public BasketController(BasketService basketService) {
+    public BasketController(BasketRepository basketRepository, BasketService basketService) {
+        this.basketRepository = basketRepository;
         this.basketService = basketService;
     }
-
     @PostMapping("/{basketId}/items")
     public ResponseEntity<BasketItem> addBasketItem(@PathVariable Long basketId, @RequestBody OrderItemRequest request) {
         Basket basket = getBasketById(basketId); // Метод для получения корзины по идентификатору

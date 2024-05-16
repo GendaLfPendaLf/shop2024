@@ -1,4 +1,6 @@
-package ru.shop2024.controller;
+package ru.shop2024.product;
+
+import ru.shop2024.product.Product;
 
 public class ProductList {
 

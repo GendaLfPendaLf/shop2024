@@ -1,7 +1,9 @@
-package ru.shop2024.controller;
+package ru.shop2024.product;
 
 import com.google.gson.Gson;
 import org.springframework.stereotype.Service;
+import ru.shop2024.product.Product;
+import ru.shop2024.product.ProductList;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
