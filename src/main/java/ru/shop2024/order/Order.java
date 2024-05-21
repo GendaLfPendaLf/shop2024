@@ -19,6 +19,9 @@ public class Order {
     private List<OrderItem> items = new ArrayList<>();
 
     // Конструкторы, геттеры и сеттеры
+    public List<OrderItem> getItems() {
+        return items;
+    }
 
     public void addItem(OrderItem item) {
         items.add(item);
