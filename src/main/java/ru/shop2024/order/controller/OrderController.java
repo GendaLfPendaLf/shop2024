@@ -9,6 +9,7 @@ import ru.shop2024.order.service.OrderService;
 import ru.shop2024.product.Product;
 import ru.shop2024.product.service.ProductService;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -25,23 +26,41 @@ public class OrderController {
     // Методы контроллера для обработки запросов, например, создание, обновление, удаление заказов и т.д.
     @PostMapping("/orders/{orderId}/items")
     public ResponseEntity<OrderItem> addOrderItem(@PathVariable Long orderId, @RequestBody OrderItemRequest request) {
-        Order order = orderService.getOrderById(orderId);
-        Product product = productService.getProductById(request.getProductId());
-        OrderItem orderItem = orderService.addOrderItem(order, product, request.getQuantity());
-        return ResponseEntity.ok(orderItem);
+        Optional<Order> orderOptional = orderService.findById(orderId);
+        if (orderOptional.isPresent()) {
+            Order order = orderOptional.get();
+            Product product = productService.getProductById(request.getProductId());
+            OrderItem orderItem = orderService.addOrderItem(order, product, request.getQuantity());
+            return ResponseEntity.ok(orderItem);
+        } else {
+            // Обработка случая, когда заказ не найден
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PutMapping("/orders/{orderId}/items/{orderItemId}")
     public ResponseEntity<Void> updateOrderItemQuantity(@PathVariable Long orderId, @PathVariable UUID orderItemId, @RequestBody OrderItemRequest request) {
-        Order order = orderService.getOrderById(orderId);
-        orderService.updateOrderItemQuantity(order, orderItemId, request.getQuantity());
-        return ResponseEntity.ok().build();
+        Optional<Order> orderOptional = orderService.findById(orderId);
+        if (orderOptional.isPresent()) {
+            Order order = orderOptional.get();
+            orderService.updateOrderItemQuantity(order, orderItemId, request.getQuantity());
+            return ResponseEntity.ok().build();
+        } else {
+            // Обработка случая, когда заказ не найден
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @DeleteMapping("/orders/{orderId}/items/{orderItemId}")
     public ResponseEntity<Void> removeOrderItem(@PathVariable Long orderId, @PathVariable UUID orderItemId) {
-        Order order = orderService.getOrderById(orderId);
-        orderService.removeOrderItem(order, orderItemId);
-        return ResponseEntity.ok().build();
+        Optional<Order> orderOptional = orderService.findById(orderId);
+        if (orderOptional.isPresent()) {
+            Order order = orderOptional.get();
+            orderService.removeOrderItem(order, orderItemId);
+            return ResponseEntity.ok().build();
+        } else {
+            // Обработка случая, когда заказ не найден
+            return ResponseEntity.notFound().build();
+        }
     }
 }
