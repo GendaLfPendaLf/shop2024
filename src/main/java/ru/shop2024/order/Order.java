@@ -3,7 +3,8 @@ package ru.shop2024.order;
 import jakarta.persistence.*;
 import ru.shop2024.user.model.User;
 
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "orders")
@@ -16,11 +17,13 @@ public class Order {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "order_id")
-    private Collection<OrderItem> items;
+    private List<OrderItem> items = new ArrayList<>();
 
     // Конструкторы
+    public Order(User user, List<OrderItem> items) {
+        this.user = user;
+        this.items = items;
+    }
 
     public Order() {
     }
@@ -30,7 +33,6 @@ public class Order {
     }
 
     // Геттеры и сеттеры
-
     public Long getId() {
         return id;
     }
@@ -43,11 +45,11 @@ public class Order {
         this.user = user;
     }
 
-    public Collection<OrderItem> getItems() {
+    public List<OrderItem> getItems() {
         return items;
     }
 
-    public void setItems(Collection<OrderItem> items) {
+    public void setItems(List<OrderItem> items) {
         this.items = items;
     }
 }
