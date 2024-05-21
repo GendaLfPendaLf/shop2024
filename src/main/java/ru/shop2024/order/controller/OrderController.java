@@ -4,15 +4,22 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.shop2024.order.Order;
 import ru.shop2024.order.OrderItem;
-import ru.shop2024.service.OrderService;
+import ru.shop2024.order.OrderItemRequest;
+import ru.shop2024.order.service.OrderService;
+import ru.shop2024.product.Product;
+import ru.shop2024.product.service.ProductService;
+
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/orders")
 public class OrderController {
     private final OrderService orderService;
+    private final ProductService productService;
 
-    public OrderController(OrderService orderService) {
+    public OrderController(OrderService orderService, ProductService productService) {
         this.orderService = orderService;
+        this.productService = productService;
     }
 
     // Методы контроллера для обработки запросов, например, создание, обновление, удаление заказов и т.д.
