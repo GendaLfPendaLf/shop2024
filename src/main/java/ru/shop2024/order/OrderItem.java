@@ -1,5 +1,8 @@
 package ru.shop2024.order;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import ru.shop2024.product.Product;
 
 import java.util.UUID;
@@ -9,12 +12,25 @@ import java.util.UUID;
 //product - ссылка на объект Product, представляющий продукт в заказе/корзине.
 //quantity - количество единиц данного продукта в заказе/корзине.
 
+@Entity
 public class OrderItem {
+    @Id
     private UUID id;
     private Product product;
     private int quantity;
 
     public OrderItem() {
+    }
+
+    @ManyToOne
+    private Order order;
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
     public OrderItem(Product product, int quantity) {
