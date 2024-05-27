@@ -33,5 +33,28 @@ public class Product {
     public Product() {
     }
 
-    // Другие конструкторы, геттеры и сеттеры, если необходимо
+    // Конструктор со всеми полями
+    public Product(String brand, String type, double price, long count, String description) {
+        this.brand = brand;
+        this.type = type;
+        this.price = price;
+        this.count = count;
+        this.description = description;
+    }
+    // Геттеры и сеттеры
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
 }
