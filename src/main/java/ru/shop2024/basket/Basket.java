@@ -1,21 +1,23 @@
 package ru.shop2024.basket;
 
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import ru.shop2024.order.Order;
 
 import java.util.List;
-
+@Entity
 public class Basket {
-    private Long basketId;
-    private List<Long> productIds;
+    //@Id
+   // @GeneratedValue(strategy = GenerationType.IDENTITY)
+   // private Long basketId;
+   // private List<Long> productIds;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "basket_id")
+    @JoinColumn(name = "basketId")
     private List<BasketItem> items;
 
     @OneToOne(mappedBy = "basket")

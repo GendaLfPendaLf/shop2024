@@ -1,10 +1,17 @@
 package ru.shop2024.basket;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import ru.shop2024.product.Product;
 
 import java.util.UUID;
 
+@Entity
 public class BasketItem {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID id;
     private Product product;
     private int quantity;

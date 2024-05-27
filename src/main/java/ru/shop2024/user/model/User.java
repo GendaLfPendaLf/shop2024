@@ -26,7 +26,7 @@ public class User {
     private List<Order> orders;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "basket_id", referencedColumnName = "id")
+    @JoinColumn(name = "basketId", referencedColumnName = "id")
     private Basket basket;
 
     // Конструктор по умолчанию
