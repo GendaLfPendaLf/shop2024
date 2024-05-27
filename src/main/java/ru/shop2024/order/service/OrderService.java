@@ -7,6 +7,8 @@ import ru.shop2024.order.OrderItem;
 import ru.shop2024.order.repository.OrderRepository;
 import ru.shop2024.product.Product;
 import ru.shop2024.user.model.User;
+import ru.shop2024.basket.repository.BasketRepository;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -14,9 +16,12 @@ import java.util.UUID;
 
 public class OrderService {
     private final OrderRepository orderRepository;
+    private final BasketRepository basketRepository;
 
-    public OrderService(OrderRepository orderRepository) {
+    public OrderService(OrderRepository orderRepository, BasketRepository basketRepository) {
+
         this.orderRepository = orderRepository;
+        this.basketRepository = basketRepository;
     }
 
     public OrderItem addOrderItem(Order order, Product product, int quantity) {

@@ -24,6 +24,22 @@ public class Order {
     private List<OrderItem> items = new ArrayList<>();
 
     // Конструкторы, геттеры и сеттеры
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Basket getBasket() {
+        return basket;
+    }
+
+    public void setBasket(Basket basket) {
+        this.basket = basket;
+    }
+
     public List<OrderItem> getItems() {
         return items;
     }
