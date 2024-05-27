@@ -2,9 +2,10 @@ package ru.shop2024.order.service;
 
 import ru.shop2024.order.Order;
 import ru.shop2024.order.OrderItem;
+import ru.shop2024.order.repository.OrderRepository;
 import ru.shop2024.product.Product;
-import ru.shop2024.Interface.OrderRepository;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -19,6 +20,14 @@ public class OrderService {
         OrderItem orderItem = new OrderItem(product, quantity);
         order.getItems().add(orderItem);
         return orderItem;
+    }
+
+    public Order createOrder(Order order) {
+        return orderRepository.save(order);
+    }
+
+    public List<Order> getAllOrders() {
+        return orderRepository.findAll();
     }
 
     public void updateOrderItemQuantity(Order order, UUID orderItemId, int newQuantity) {

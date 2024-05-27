@@ -1,5 +1,6 @@
 package ru.shop2024.order.controller;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.shop2024.order.Order;
@@ -9,6 +10,7 @@ import ru.shop2024.order.service.OrderService;
 import ru.shop2024.product.Product;
 import ru.shop2024.product.service.ProductService;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -36,6 +38,16 @@ public class OrderController {
             // Обработка случая, когда заказ не найден
             return ResponseEntity.notFound().build();
         }
+    }
+    @PostMapping
+    public ResponseEntity<Order> createOrder(@RequestBody Order order) {
+        Order createdOrder = orderService.createOrder(order);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdOrder);
+    }
+    @GetMapping
+    public ResponseEntity<Object> getAllOrders() {
+        List<Order> orders = orderService.getAllOrders();
+        return ResponseEntity.ok(orders);
     }
 
     @PutMapping("/orders/{orderId}/items/{orderItemId}")

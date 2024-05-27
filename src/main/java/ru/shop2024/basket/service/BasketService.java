@@ -1,7 +1,7 @@
 package ru.shop2024.basket.service;
 
 import org.springframework.stereotype.Service;
-import ru.shop2024.Interface.BasketRepository;
+import ru.shop2024.basket.repository.BasketRepository;
 import ru.shop2024.basket.Basket;
 import ru.shop2024.basket.BasketItem;
 import ru.shop2024.product.Product;
