@@ -1,11 +1,12 @@
 package ru.shop2024.basket.service;
 
 import org.springframework.stereotype.Service;
-import ru.shop2024.basket.repository.BasketRepository;
 import ru.shop2024.basket.Basket;
 import ru.shop2024.basket.BasketItem;
+import ru.shop2024.basket.repository.BasketRepository;
 import ru.shop2024.product.Product;
 import ru.shop2024.product.service.ProductService;
+import ru.shop2024.user.model.User;
 
 import java.util.UUID;
 
@@ -41,5 +42,8 @@ public class BasketService {
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("BasketItem not found"));
         basket.getItems().remove(basketItem);
+    }
+    public Basket getBasketForUser(User user) {
+        return user.getBasket();
     }
 }

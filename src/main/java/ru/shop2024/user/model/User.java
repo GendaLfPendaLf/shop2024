@@ -3,6 +3,7 @@ package ru.shop2024.user.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import ru.shop2024.basket.Basket;
 import ru.shop2024.order.Order;
 
 import java.util.List;
@@ -24,8 +25,13 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Order> orders;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "basket_id", referencedColumnName = "id")
+    private Basket basket;
+
     // Конструктор по умолчанию
     public User() {
+        this.basket = new Basket();
     }
 
     // Конструктор со всеми полями

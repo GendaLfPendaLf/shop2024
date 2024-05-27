@@ -1,6 +1,7 @@
 package ru.shop2024.order;
 
 import jakarta.persistence.*;
+import ru.shop2024.basket.Basket;
 import ru.shop2024.user.model.User;
 
 import java.util.ArrayList;
@@ -14,6 +15,10 @@ public class Order {
 
     @ManyToOne
     private User user;
+
+    @OneToOne
+    @JoinColumn(name = "basket_id", referencedColumnName = "id")
+    private Basket basket;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItem> items = new ArrayList<>();

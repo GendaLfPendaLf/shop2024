@@ -2,11 +2,13 @@ package ru.shop2024.basket.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.shop2024.basket.repository.BasketRepository;
 import ru.shop2024.basket.Basket;
 import ru.shop2024.basket.BasketItem;
-import ru.shop2024.order.OrderItemRequest;
+import ru.shop2024.basket.repository.BasketRepository;
 import ru.shop2024.basket.service.BasketService;
+import ru.shop2024.order.OrderItemRequest;
+import ru.shop2024.user.model.User;
+import ru.shop2024.user.service.UserService;
 
 import java.util.UUID;
 
@@ -15,10 +17,12 @@ import java.util.UUID;
 public class BasketController {
     private final BasketRepository basketRepository;
     private final BasketService basketService;
+    private final UserService userService;
 
-    public BasketController(BasketRepository basketRepository, BasketService basketService) {
+    public BasketController(BasketRepository basketRepository, BasketService basketService, UserService userService) {
         this.basketRepository = basketRepository;
         this.basketService = basketService;
+        this.userService = userService;
     }
     @PostMapping("/{basketId}/items")
     public ResponseEntity<BasketItem> addBasketItem(@PathVariable Long basketId, @RequestBody OrderItemRequest request) {
@@ -39,6 +43,12 @@ public class BasketController {
         ru.shop2024.basket.Basket basket = getBasketById(basketId);
         basketService.removeBasketItem(basket, basketItemId);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping
+    public ResponseEntity<User> getUserById(@RequestParam Long id) {
+        User user = userService.getUserById(id);
+        return ResponseEntity.ok(user);
     }
 
     // Метод для получения корзины по идентификатору

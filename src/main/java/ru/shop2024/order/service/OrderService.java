@@ -1,9 +1,12 @@
 package ru.shop2024.order.service;
 
+import ru.shop2024.basket.Basket;
+import ru.shop2024.basket.BasketItem;
 import ru.shop2024.order.Order;
 import ru.shop2024.order.OrderItem;
 import ru.shop2024.order.repository.OrderRepository;
 import ru.shop2024.product.Product;
+import ru.shop2024.user.model.User;
 
 import java.util.List;
 import java.util.Optional;
@@ -56,4 +59,27 @@ public class OrderService {
     public void main() {
         // Код метода main(), если необходимо
     }
+
+    public Order createOrderFromBasket(User user) {
+        Basket basket = user.getBasket();
+        Order order = new Order();
+        order.setUser(user);
+        order.setBasket(basket);
+
+        for (BasketItem basketItem : basket.getItems()) {
+            OrderItem orderItem = new OrderItem();
+            orderItem.setProduct(basketItem.getProduct());
+            orderItem.setQuantity(basketItem.getQuantity());
+            order.addItem(orderItem);
+        }
+
+        return orderRepository.save(order);
+    }
+
+    public void clearBasket(Order order) {
+        Basket basket = order.getBasket();
+        basket.getItems().clear();
+        basketRepository.save(basket);
+    }
+
 }

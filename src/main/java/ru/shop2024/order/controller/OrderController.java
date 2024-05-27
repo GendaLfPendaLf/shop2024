@@ -9,6 +9,10 @@ import ru.shop2024.order.OrderItemRequest;
 import ru.shop2024.order.service.OrderService;
 import ru.shop2024.product.Product;
 import ru.shop2024.product.service.ProductService;
+import ru.shop2024.user.model.User;
+import ru.shop2024.user.service.UserService;
+import ru.shop2024.exception.ResourceNotFoundException;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -19,10 +23,12 @@ import java.util.UUID;
 public class OrderController {
     private final OrderService orderService;
     private final ProductService productService;
+    private final UserService userService;
 
-    public OrderController(OrderService orderService, ProductService productService) {
+    public OrderController(OrderService orderService, ProductService productService, UserService userService) {
         this.orderService = orderService;
         this.productService = productService;
+        this.userService = userService;
     }
 
     // Методы контроллера для обработки запросов, например, создание, обновление, удаление заказов и т.д.
@@ -39,11 +45,20 @@ public class OrderController {
             return ResponseEntity.notFound().build();
         }
     }
-    @PostMapping
-    public ResponseEntity<Order> createOrder(@RequestBody Order order) {
-        Order createdOrder = orderService.createOrder(order);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdOrder);
+    @PostMapping("/{userId}")
+    public ResponseEntity<Order> createOrder(@PathVariable Long userId) {
+        User user;
+        try {
+            user = userService.getUserById(userId);
+        } catch (ResourceNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        }
+        Order order = orderService.createOrderFromBasket(user);
+        orderService.clearBasket(order);
+        return ResponseEntity.status(HttpStatus.CREATED).body(order);
     }
+
+
     @GetMapping
     public ResponseEntity<Object> getAllOrders() {
         List<Order> orders = orderService.getAllOrders();
