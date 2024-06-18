@@ -21,13 +21,12 @@ public class User {
     private String sex;
     @Column(nullable = false, columnDefinition = "TEXT")
     private String address;
-    private Long basketId;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Order> orders;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "basketId", referencedColumnName = "id")
+    @JoinColumn(name = "basket_id", referencedColumnName = "id")
     private Basket basket;
 
     // Конструктор по умолчанию
@@ -41,7 +40,7 @@ public class User {
         this.surname = surname;
         this.sex = sex;
         this.address = address;
-        this.basketId = basketId;
+        this.basket = new Basket();
     }
 
     // Геттеры и сеттеры

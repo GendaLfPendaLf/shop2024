@@ -31,7 +31,7 @@ public class UserService {
         existingUser.setSurname(updatedUser.getSurname());
         existingUser.setSex(updatedUser.getSex());
         existingUser.setAddress(updatedUser.getAddress());
-        existingUser.setBasketId(updatedUser.getBasketId());
+        existingUser.setBasket(updatedUser.getBasket());
         return userRepository.save(existingUser);
     }
 
