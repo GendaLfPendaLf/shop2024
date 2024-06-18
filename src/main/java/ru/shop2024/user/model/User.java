@@ -19,6 +19,7 @@ public class User {
     private String name;
     private String surname;
     private String sex;
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String address;
     private Long basketId;
 

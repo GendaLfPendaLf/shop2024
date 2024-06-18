@@ -2,16 +2,17 @@ package ru.shop2024.product;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.UUID;
+
 @Entity
 @Data
-
-public class Product {
+@NoArgsConstructor
+public class Product implements Serializable {
     @Id
-
     @GeneratedValue(strategy = GenerationType.UUID)
-
     private UUID id;
 
     @Column(nullable = false)
@@ -20,41 +21,24 @@ public class Product {
     @Column(nullable = false)
     private String type;
 
-    @Column(nullable = false, precision = 10, scale = 2)
+    @Column(nullable = false, precision = 10)
     private Double price;
 
     @Column(nullable = false)
     private Long count;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String description;
 
-    // Конструктор без аргументов (необходим для Hibernate)
-    public Product() {
-    }
-
     // Конструктор со всеми полями
-    public Product(String brand, String type, double price, long count, String description) {
+    public Product(String brand, String type, Double price, Long count, String description) {
         this.brand = brand;
         this.type = type;
         this.price = price;
         this.count = count;
         this.description = description;
     }
+
     // Геттеры и сеттеры
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
+    // (они генерируются автоматически с помощью аннотации @Data)
 }

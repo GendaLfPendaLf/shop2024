@@ -17,7 +17,7 @@ public class Order {
     private User user;
 
     @OneToOne
-    @JoinColumn(name = "basket_id", referencedColumnName = "id")
+    @JoinColumn(name = "basketId", referencedColumnName = "id")
     private Basket basket;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
